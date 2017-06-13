@@ -1,6 +1,6 @@
 # DevicesApi
 
-All URIs are relative to *https://localhost/api/v1*
+All URIs are relative to *https://trackme.lk/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,7 +23,7 @@ Removes existing device
 ### Example
 ```java
 // Import classes:
-//import lk.trackme.android.api.DevicesApi;
+//import lk.trackme.client.api.DevicesApi;
 
 DevicesApi apiInstance = new DevicesApi();
 Long id = 789L; // Long | identifier of device to be deleted
@@ -67,7 +67,7 @@ Register new device
 ### Example
 ```java
 // Import classes:
-//import lk.trackme.android.api.DevicesApi;
+//import lk.trackme.client.api.DevicesApi;
 
 DevicesApi apiInstance = new DevicesApi();
 Device body = new Device(); // Device | user to add to the system
@@ -110,7 +110,7 @@ Updates existing device
 ### Example
 ```java
 // Import classes:
-//import lk.trackme.android.api.DevicesApi;
+//import lk.trackme.client.api.DevicesApi;
 
 DevicesApi apiInstance = new DevicesApi();
 Device body = new Device(); // Device | user to add to the system
@@ -153,7 +153,7 @@ Shares existing device to user
 ### Example
 ```java
 // Import classes:
-//import lk.trackme.android.api.DevicesApi;
+//import lk.trackme.client.api.DevicesApi;
 
 DevicesApi apiInstance = new DevicesApi();
 Long deviceId = 789L; // Long | identifier of device to be shared
@@ -201,7 +201,7 @@ Stop sharing existing device to user
 ### Example
 ```java
 // Import classes:
-//import lk.trackme.android.api.DevicesApi;
+//import lk.trackme.client.api.DevicesApi;
 
 DevicesApi apiInstance = new DevicesApi();
 Long deviceId = 789L; // Long | identifier of device
@@ -240,7 +240,7 @@ null (empty response body)
 
 <a name="devicesGet"></a>
 # **devicesGet**
-> devicesGet()
+> List&lt;Device&gt; devicesGet()
 
 
 
@@ -249,11 +249,12 @@ List all available devices for user
 ### Example
 ```java
 // Import classes:
-//import lk.trackme.android.api.DevicesApi;
+//import lk.trackme.client.api.DevicesApi;
 
 DevicesApi apiInstance = new DevicesApi();
 try {
-    apiInstance.devicesGet();
+    List<Device> result = apiInstance.devicesGet();
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DevicesApi#devicesGet");
     e.printStackTrace();
@@ -265,7 +266,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-null (empty response body)
+[**List&lt;Device&gt;**](Device.md)
 
 ### Authorization
 

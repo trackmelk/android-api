@@ -12,6 +12,14 @@ To install the API client library to your local Maven repository, simply execute
 mvn install
 ```
 
+To deploy it to a remote Maven repository instead, configure the settings of the repository and execute:
+
+```shell
+mvn deploy
+```
+
+Refer to the [official documentation](https://maven.apache.org/plugins/maven-deploy-plugin/usage.html) for more information.
+
 ### Maven users
 
 Add this dependency to your project's POM:
@@ -50,7 +58,7 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import lk.trackme.android.api.DevicesApi;
+import lk.trackme.client.api.DevicesApi;
 
 public class DevicesApiExample {
 
@@ -71,7 +79,7 @@ public class DevicesApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://localhost/api/v1*
+All URIs are relative to *https://trackme.lk/api/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -83,11 +91,13 @@ Class | Method | HTTP request | Description
 *DevicesApi* | [**devicesGet**](docs/DevicesApi.md#devicesGet) | **GET** /devices | 
 *LoginApi* | [**usersPost**](docs/LoginApi.md#usersPost) | **POST** /login | 
 *PositionsApi* | [**devicePositionsGet**](docs/PositionsApi.md#devicePositionsGet) | **GET** /positions/{deviceId} | 
+*PositionsApi* | [**historyPositionsGet**](docs/PositionsApi.md#historyPositionsGet) | **GET** /positions/history/{deviceId} | 
 *PositionsApi* | [**positionsGet**](docs/PositionsApi.md#positionsGet) | **GET** /positions | 
-*RecoverpasswordApi* | [**recoverPassword**](docs/RecoverpasswordApi.md#recoverPassword) | **POST** /recover_password | 
-*RecoverpasswordApi* | [**usersPut**](docs/RecoverpasswordApi.md#usersPut) | **PUT** /recover_password | 
+*Recover_passwordApi* | [**recoveryPassword**](docs/Recover_passwordApi.md#recoveryPassword) | **POST** /recover_password | 
+*Recover_passwordApi* | [**usersPut**](docs/Recover_passwordApi.md#usersPut) | **PUT** /recover_password | 
 *UsersApi* | [**getCurrentUser**](docs/UsersApi.md#getCurrentUser) | **GET** /users/me | 
-*UsersApi* | [**registerUsers**](docs/UsersApi.md#registerUsers) | **POST** /users | 
+*UsersApi* | [**registerNewUser**](docs/UsersApi.md#registerNewUser) | **POST** /users | 
+*UsersApi* | [**updateCurrentUser**](docs/UsersApi.md#updateCurrentUser) | **PUT** /users/me | 
 
 
 ## Documentation for Models
@@ -112,7 +122,7 @@ Authentication schemes defined for the API:
 
 ## Recommendation
 
-It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issue.
+It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
 
 ## Author
 

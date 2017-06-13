@@ -1,6 +1,6 @@
 # LoginApi
 
-All URIs are relative to *https://localhost/api/v1*
+All URIs are relative to *https://trackme.lk/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,7 +18,7 @@ Login
 ### Example
 ```java
 // Import classes:
-//import lk.trackme.android.api.LoginApi;
+//import lk.trackme.client.api.LoginApi;
 
 LoginApi apiInstance = new LoginApi();
 LoginInfo body = new LoginInfo(); // LoginInfo | Authorized user profile
